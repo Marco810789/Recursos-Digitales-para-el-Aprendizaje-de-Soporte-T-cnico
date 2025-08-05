@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos Educativos - Soporte Técnico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --success: #2ecc71;
+            --unl-gold: #D4AF37;
+            --unl-blue: #003366;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Nueva sección de información universitaria */
+        .university-info {
+            background: linear-gradient(to right, var(--unl-blue), #001a33);
+            color: white;
+            padding: 12px 0;
+            position: relative;
+            z-index: 101;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .university-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .university-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .university-logo img {
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid var(--unl-gold);
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+        
+        .university-logo h1 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--unl-gold);
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .teacher-info {
+            text-align: right;
+        }
+        
+        .teacher-info p {
+            font-size: 0.95rem;
+            margin-bottom: 3px;
+        }
+        
+        .teacher-name {
+            font-weight: 600;
+            color: var(--unl-gold);
+        }
+        
+        .department {
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        
+        header {
+            background: rgba(44, 62, 80, 0.9);
+            color: white;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo i {
+            font-size: 2.5rem;
+            color: var(--secondary);
+        }
+        
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover, nav a.active {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .hero {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 1200px;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: #555;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--secondary);
+            margin: 0 10px;
+        }
+        
+        .btn:hover {
+            background: transparent;
+            color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--secondary);
+        }
+        
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: white;
+        }
+        
+        .platforms {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 2rem 0;
+        }
+        
+        .platform {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .platform:hover {
+            transform: translateY(-5px);
+        }
+        
+        .platform i {
+            font-size: 1.8rem;
+            color: var(--secondary);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .resources {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 3rem;
+        }
+        
+        .resource-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .card-header i {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+        
+        .card-body {
+            padding: 25px;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card-body h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .card-body p {
+            color: #555;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .card-footer {
+            padding: 0 25px 25px;
+        }
+        
+        .resource-placeholder {
+            background: #f8f9fa;
+            border: 2px dashed #dee2e6;
+            border-radius: 8px;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+            font-weight: 600;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .slider-container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            text-align: left;
+        }
+        
+        .footer-section h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--secondary);
+        }
+        
+        .contact span {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .socials a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #3a3a3a;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            color: white;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .socials a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .links ul {
+            list-style: none;
+        }
+        
+        .links li {
+            margin-bottom: 10px;
+        }
+        
+        .links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .links a:hover {
+            color: var(--secondary);
+            margin-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            margin-top: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .resources {
+                grid-template-columns: 1fr;
+            }
+            
+            .university-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .teacher-info {
+                text-align: center;
+            }
+            
+            .university-logo {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Nueva sección de información universitaria -->
+    <div class="university-info">
+        <div class="university-container">
+            <div class="university-logo">
+                <!-- Logo de la Universidad Nacional de Loja -->
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23003366' stroke='%23D4AF37' stroke-width='2'/%3E%3Cpath d='M30,35 L70,35 L70,65 L30,65 Z' fill='%23D4AF37'/%3E%3Ctext x='50' y='50' text-anchor='middle' fill='white' font-size='20' font-weight='bold'%3EUNL%3C/text%3E%3C/svg%3E" alt="Escudo UNL">
+                <h1>Universidad Nacional de Loja</h1>
+            </div>
+            <div class="teacher-info">
+                <p class="teacher-name">Marco Quizhpe Cango</p>
+                <p class="department">Carrera de Informática Educativa</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Encabezado -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-laptop-code"></i>
+                <h1>Soporte Técnico - Recursos Educativos</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Inicio</a></li>
+                    <li><a href="#">Planificaciones</a></li>
+                    <li><a href="#">Recursos</a></li>
+                    <li><a href="#">Evaluaciones</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección Hero -->
+    <section class="hero">
+        <h2>Recursos Digitales para el Aprendizaje de Soporte Técnico</h2>
+        <p>Plataforma integral con recursos educativos digitales para la enseñanza de informática con enfoque en soporte técnico. Integración de múltiples herramientas para un aprendizaje interactivo y efectivo.</p>
+        
+        <div class="platforms">
+            <div class="platform">
+                <i class="fas fa-book"></i>
+                <span>Heyzine Flipbook</span>
+            </div>
+            <div class="platform">
+                <i class="fas fa-poll"></i>
+                <span>Mentimeter</span>
+            </div>
+            <div class="platform">
+                <i class="fas fa-presentation"></i>
+                <span>Canva</span>
+            </div>
+            <div class="platform">
+                <i class="fas fa-question-circle"></i>
+                <span>Quizizz</span>
+            </div>
+            <div class="platform">
+                <i class="fas fa-comments"></i>
+                <span>Slido</span>
+            </div>
+            <div class="platform">
+                <i class="fas fa-sliders-h"></i>
+                <span>Genially</span>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <a href="#resources" class="btn">Explorar Recursos</a>
+            <a href="#" class="btn btn-outline">Acceso Docentes</a>
+        </div>
+    </section>
+
+    <!-- Recursos -->
+    <div class="container">
+        <h2 class="section-title" id="resources">Recursos Educativos</h2>
+        
+        <div class="resources">
+            <!-- Planificaciones (Heyzine) -->
+            <div class="resource-card">
+                <div class="card-header">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Planificaciones</h3>
+                </div>
+                <div class="card-body">
+                    <h3>Planificaciones de Clases</h3>
+                    <p>Accede a todas las planificaciones de clases en formato interactivo utilizando Heyzine Flipbook. Visualiza el cronograma, objetivos de aprendizaje y actividades programadas.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="resource-placeholder">
+                        <!-- Espacio para incrustar Heyzine Flipbook -->
+                        <p>Incrustar aquí el Flipbook de Heyzine<br>
+                        <code>&lt;iframe src="tu_flipbook_heyzine"&gt;&lt;/iframe&gt;</code></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Conocimientos Previos (Mentimeter) -->
+            <div class="resource-card">
+                <div class="card-header">
+                    <i class="fas fa-brain"></i>
+                    <h3>Conocimientos Previos</h3>
+                </div>
+                <div class="card-body">
+                    <h3>Actividades Interactivas</h3>
+                    <p>Evalúa y activa los conocimientos previos de los estudiantes utilizando Mentimeter. Participa en encuestas en tiempo real, nubes de palabras y sesiones de preguntas y respuestas.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="resource-placeholder">
+                        <!-- Espacio para incrustar Mentimeter -->
+                        <p>Incrustar aquí presentación de Mentimeter<br>
+                        <code>&lt;iframe src="tu_mentimeter"&gt;&lt;/iframe&gt;</code></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Diapositivas (Canva) -->
+            <div class="resource-card">
+                <div class="card-header">
+                    <i class="fas fa-desktop"></i>
+                    <h3>Diapositivas</h3>
+                </div>
+                <div class="card-body">
+                    <h3>Presentaciones Visuales</h3>
+                    <p>Accede a las diapositivas de cada módulo creadas con Canva. Material visualmente atractivo que facilita la comprensión de conceptos complejos de soporte técnico.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="resource-placeholder">
+                        <!-- Espacio para incrustar Canva -->
+                        <p>Incrustar aquí presentación de Canva<br>
+                        <code>&lt;iframe src="tu_presentacion_canva"&gt;&lt;/iframe&gt;</code></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Evaluaciones (Quizizz) -->
+            <div class="resource-card">
+                <div class="card-header">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Evaluaciones</h3>
+                </div>
+                <div class="card-body">
+                    <h3>Quizzes Interactivos</h3>
+                    <p>Pon a prueba tus conocimientos con evaluaciones interactivas creadas en Quizizz. Recibe retroalimentación inmediata y compite con tus compañeros de manera divertida.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="resource-placeholder">
+                        <!-- Espacio para incrustar Quizizz -->
+                        <p>Incrustar aquí quiz de Quizizz<br>
+                        <code>&lt;iframe src="tu_quizizz"&gt;&lt;/iframe&gt;</code></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Participación (Slido) -->
+            <div class="resource-card">
+                <div class="card-header">
+                    <i class="fas fa-comments"></i>
+                    <h3>Participación</h3>
+                </div>
+                <div class="card-body">
+                    <h3>Plataforma de Interacción</h3>
+                    <p>Participa en clases utilizando Slido para hacer preguntas, responder encuestas y contribuir con tus ideas. Una herramienta esencial para el aprendizaje colaborativo.</p>
+                </div>
+                <div class="card-footer">
+                    <div class="resource-placeholder">
+                        <!-- Espacio para incrustar Slido -->
+                        <p>Incrustar aquí Slido<br>
+                        <code>&lt;iframe src="tu_slido"&gt;&lt;/iframe&gt;</code></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slider Genially -->
+        <h2 class="section-title">Slider Interactivo</h2>
+        <div class="slider-container">
+            <div class="resource-placeholder" style="min-height: 500px;">
+                <!-- Espacio para incrustar Genially -->
+                <p>Incrustar aquí slider interactivo de Genially<br>
+                <code>&lt;iframe src="tu_slider_genially" width="100%" height="500"&gt;&lt;/iframe&gt;</code></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Sobre el Proyecto</h3>
+                <p>Plataforma educativa para la enseñanza de soporte técnico en informática. Integramos diversas herramientas digitales para crear una experiencia de aprendizaje completa e interactiva.</p>
+                <div class="university-logo" style="margin-top: 15px; justify-content: flex-start;">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%23003366' stroke='%23D4AF37' stroke-width='2'/%3E%3Cpath d='M30,35 L70,35 L70,65 L30,65 Z' fill='%23D4AF37'/%3E%3Ctext x='50' y='50' text-anchor='middle' fill='white' font-size='20' font-weight='bold'%3EUNL%3C/text%3E%3C/svg%3E" alt="Escudo UNL" style="height: 40px;">
+                    <div>
+                        <p style="color: #D4AF37; font-weight: 600;">Universidad Nacional de Loja</p>
+                        <p style="font-size: 0.9rem;">Carrera de Informática Educativa</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-section contact">
+                <h3>Contacto</h3>
+                <span><i class="fas fa-user-graduate"></i> Marco Quizhpe Cango</span>
+                <span><i class="fas fa-envelope"></i> marco.quizhpe@unl.edu.ec</span>
+                <span><i class="fas fa-phone"></i> +593 123 456 789</span>
+                <div class="socials" style="margin-top: 15px;">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Recursos</a></li>
+                    <li><a href="#">Planificaciones</a></li>
+                    <li><a href="#">Evaluaciones</a></li>
+                    <li><a href="#">Plataformas</a></li>
+                    <li><a href="#">Portal UNL</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Recursos Educativos - Soporte Técnico. Universidad Nacional de Loja - Carrera de Informática Educativa</p>
+        </div>
+    </footer>
+
+    <script>
+        // Script para resaltar la navegación al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    // Remover clase activa de todos los enlaces
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    
+                    // Agregar clase activa al enlace clickeado
+                    this.classList.add('active');
+                });
+            });
+            
+            // Efecto hover en tarjetas de recursos
+            const resourceCards = document.querySelectorAll('.resource-card');
+            resourceCards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.transform = 'translateY(-10px)';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
