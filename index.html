@@ -3,41 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recursos Educativos - Soporte Técnico</title>
+    <title>Recursos Educativos - Soporte Técnico | UNL</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --success: #2ecc71;
-            --unl-gold: #D4AF37;
             --unl-blue: #003366;
+            --unl-gold: #D4AF37;
+            --unl-light-blue: #0056b3;
+            --unl-gray: #f5f5f5;
+            --unl-dark-gray: #333;
+            --unl-white: #ffffff;
         }
         
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--unl-white);
             color: #333;
             line-height: 1.6;
+            background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), url('https://unl.edu.ec/sites/default/files/inline-images/edificio_0.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
         
-        /* Nueva sección de información universitaria */
         .university-info {
-            background: linear-gradient(to right, var(--unl-blue), #001a33);
+            background: var(--unl-blue);
             color: white;
             padding: 12px 0;
             position: relative;
             z-index: 101;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            border-bottom: 3px solid var(--unl-gold);
         }
         
         .university-container {
@@ -71,10 +74,12 @@
             font-weight: 600;
             color: var(--unl-gold);
             text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            font-family: 'Montserrat', sans-serif;
         }
         
         .teacher-info {
             text-align: right;
+            font-family: 'Roboto', sans-serif;
         }
         
         .teacher-info p {
@@ -90,21 +95,24 @@
         .department {
             font-style: italic;
             font-size: 0.9rem;
+            color: #e0e0e0;
         }
         
         header {
-            background: rgba(44, 62, 80, 0.9);
+            background: var(--unl-blue);
             color: white;
-            padding: 1rem;
+            padding: 1rem 0;
             position: sticky;
             top: 0;
             z-index: 100;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-bottom: 2px solid var(--unl-gold);
         }
         
         .header-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -118,85 +126,101 @@
         }
         
         .logo i {
-            font-size: 2.5rem;
-            color: var(--secondary);
+            font-size: 2.2rem;
+            color: var(--unl-gold);
         }
         
         .logo h1 {
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--unl-white);
         }
         
         nav ul {
             display: flex;
             list-style: none;
-            gap: 20px;
+            gap: 15px;
         }
         
         nav a {
             color: white;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 500;
             padding: 8px 15px;
-            border-radius: 20px;
+            border-radius: 4px;
             transition: all 0.3s ease;
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
         }
         
         nav a:hover, nav a.active {
-            background: var(--secondary);
+            background: var(--unl-light-blue);
             color: white;
         }
         
         .hero {
             background: rgba(255, 255, 255, 0.95);
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
             margin: 2rem auto;
             max-width: 1200px;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.95), rgba(245,245,245,0.95)), url('https://unl.edu.ec/sites/default/files/inline-images/edificio_0.png');
+            background-size: cover;
+            background-position: center;
         }
         
         .hero h2 {
             font-size: 2.5rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+            color: var(--unl-blue);
+            margin-bottom: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
         
         .hero p {
             font-size: 1.2rem;
             max-width: 800px;
-            margin: 0 auto 2rem;
-            color: #555;
+            margin: 0 auto 2.5rem;
+            color: #444;
+            line-height: 1.8;
         }
         
         .btn {
             display: inline-block;
-            background: var(--secondary);
+            background: var(--unl-blue);
             color: white;
             padding: 12px 30px;
             border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: 2px solid var(--secondary);
+            border: 2px solid var(--unl-blue);
             margin: 0 10px;
+            font-family: 'Roboto', sans-serif;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         
         .btn:hover {
-            background: transparent;
-            color: var(--secondary);
+            background: var(--unl-light-blue);
+            color: white;
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            border-color: var(--unl-light-blue);
         }
         
         .btn-outline {
             background: transparent;
-            color: var(--secondary);
+            color: var(--unl-blue);
+            border: 2px solid var(--unl-blue);
         }
         
         .btn-outline:hover {
-            background: var(--secondary);
+            background: var(--unl-blue);
             color: white;
         }
         
@@ -210,37 +234,42 @@
         
         .platform {
             background: white;
-            padding: 15px;
-            border-radius: 10px;
+            padding: 15px 20px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             gap: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
         }
         
         .platform:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            border-color: var(--unl-gold);
         }
         
         .platform i {
             font-size: 1.8rem;
-            color: var(--secondary);
+            color: var(--unl-blue);
         }
         
         .container {
             max-width: 1200px;
-            margin: 2rem auto;
+            margin: 3rem auto;
             padding: 0 20px;
         }
         
         .section-title {
             text-align: center;
-            color: white;
-            font-size: 2rem;
-            margin-bottom: 2rem;
+            color: var(--unl-blue);
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
             position: relative;
             padding-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
         }
         
         .section-title:after {
@@ -251,7 +280,7 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background: var(--secondary);
+            background: var(--unl-gold);
             border-radius: 2px;
         }
         
@@ -264,29 +293,37 @@
         
         .resource-card {
             background: white;
-            border-radius: 10px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
         }
         
         .resource-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-color: var(--unl-gold);
         }
         
         .card-header {
-            background: var(--primary);
+            background: var(--unl-blue);
             color: white;
             padding: 20px;
             display: flex;
             align-items: center;
             gap: 15px;
+            border-bottom: 3px solid var(--unl-gold);
         }
         
         .card-header i {
             font-size: 2rem;
-            color: var(--secondary);
+            color: var(--unl-gold);
+        }
+        
+        .card-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
         }
         
         .card-body {
@@ -297,15 +334,17 @@
         }
         
         .card-body h3 {
-            color: var(--primary);
+            color: var(--unl-blue);
             margin-bottom: 15px;
             font-size: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
         }
         
         .card-body p {
             color: #555;
             margin-bottom: 20px;
             flex-grow: 1;
+            line-height: 1.7;
         }
         
         .card-footer {
@@ -324,6 +363,7 @@
             font-weight: 600;
             text-align: center;
             padding: 20px;
+            background-color: var(--unl-gray);
         }
         
         .slider-container {
@@ -331,14 +371,16 @@
             border-radius: 10px;
             padding: 30px;
             margin-bottom: 3rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0e0e0;
         }
         
         footer {
-            background: var(--dark);
+            background: var(--unl-blue);
             color: white;
-            padding: 3rem 0;
+            padding: 3rem 0 0;
             text-align: center;
+            border-top: 3px solid var(--unl-gold);
         }
         
         .footer-content {
@@ -356,6 +398,8 @@
             margin-bottom: 20px;
             position: relative;
             padding-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--unl-gold);
         }
         
         .footer-section h3:after {
@@ -365,30 +409,40 @@
             left: 0;
             width: 50px;
             height: 3px;
-            background: var(--secondary);
+            background: var(--unl-gold);
         }
         
         .contact span {
             display: block;
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact i {
+            color: var(--unl-gold);
+            width: 20px;
         }
         
         .socials a {
             display: inline-block;
             width: 40px;
             height: 40px;
-            background: #3a3a3a;
+            background: rgba(255,255,255,0.1);
             border-radius: 50%;
             text-align: center;
             line-height: 40px;
             color: white;
             margin-right: 10px;
             transition: all 0.3s ease;
+            border: 1px solid rgba(255,255,255,0.2);
         }
         
         .socials a:hover {
-            background: var(--secondary);
+            background: var(--unl-gold);
             transform: translateY(-5px);
+            border-color: var(--unl-gold);
         }
         
         .links ul {
@@ -403,18 +457,47 @@
             color: #ddd;
             text-decoration: none;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .links a:before {
+            content: "›";
+            color: var(--unl-gold);
+            font-weight: bold;
         }
         
         .links a:hover {
-            color: var(--secondary);
+            color: var(--unl-gold);
             margin-left: 5px;
         }
         
         .copyright {
             text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid #444;
+            padding: 25px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
             margin-top: 30px;
+            background: rgba(0,0,0,0.1);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        /* Estilos adicionales inspirados en UNL */
+        .unl-badge {
+            background: var(--unl-gold);
+            color: var(--unl-blue);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .unl-highlight {
+            color: var(--unl-gold);
+            font-weight: 600;
         }
         
         @media (max-width: 768px) {
@@ -447,6 +530,13 @@
             
             .university-logo {
                 justify-content: center;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                width: 80%;
+                max-width: 300px;
             }
         }
     </style>
@@ -488,6 +578,7 @@
 
     <!-- Sección Hero -->
     <section class="hero">
+        <div class="unl-badge">Educación de Calidad</div>
         <h2>Recursos Digitales para el Aprendizaje de Soporte Técnico</h2>
         <p>Plataforma integral con recursos educativos digitales para la enseñanza de informática con enfoque en soporte técnico. Integración de múltiples herramientas para un aprendizaje interactivo y efectivo.</p>
         
@@ -541,7 +632,6 @@
                 </div>
                 <div class="card-footer">
                     <div class="resource-placeholder">
-                        <!-- Espacio para incrustar Heyzine Flipbook -->
                         <p>Incrustar aquí el Flipbook de Heyzine<br>
                         <code>&lt;iframe src="tu_flipbook_heyzine"&gt;&lt;/iframe&gt;</code></p>
                     </div>
@@ -560,7 +650,6 @@
                 </div>
                 <div class="card-footer">
                     <div class="resource-placeholder">
-                        <!-- Espacio para incrustar Mentimeter -->
                         <p>Incrustar aquí presentación de Mentimeter<br>
                         <code>&lt;iframe src="tu_mentimeter"&gt;&lt;/iframe&gt;</code></p>
                     </div>
@@ -579,7 +668,6 @@
                 </div>
                 <div class="card-footer">
                     <div class="resource-placeholder">
-                        <!-- Espacio para incrustar Canva -->
                         <p>Incrustar aquí presentación de Canva<br>
                         <code>&lt;iframe src="tu_presentacion_canva"&gt;&lt;/iframe&gt;</code></p>
                     </div>
@@ -598,7 +686,6 @@
                 </div>
                 <div class="card-footer">
                     <div class="resource-placeholder">
-                        <!-- Espacio para incrustar Quizizz -->
                         <p>Incrustar aquí quiz de Quizizz<br>
                         <code>&lt;iframe src="tu_quizizz"&gt;&lt;/iframe&gt;</code></p>
                     </div>
@@ -617,7 +704,6 @@
                 </div>
                 <div class="card-footer">
                     <div class="resource-placeholder">
-                        <!-- Espacio para incrustar Slido -->
                         <p>Incrustar aquí Slido<br>
                         <code>&lt;iframe src="tu_slido"&gt;&lt;/iframe&gt;</code></p>
                     </div>
@@ -629,7 +715,6 @@
         <h2 class="section-title">Slider Interactivo</h2>
         <div class="slider-container">
             <div class="resource-placeholder" style="min-height: 500px;">
-                <!-- Espacio para incrustar Genially -->
                 <p>Incrustar aquí slider interactivo de Genially<br>
                 <code>&lt;iframe src="tu_slider_genially" width="100%" height="500"&gt;&lt;/iframe&gt;</code></p>
             </div>
@@ -656,11 +741,13 @@
                 <span><i class="fas fa-user-graduate"></i> Marco Quizhpe Cango</span>
                 <span><i class="fas fa-envelope"></i> marco.quizhpe@unl.edu.ec</span>
                 <span><i class="fas fa-phone"></i> +593 123 456 789</span>
+                <span><i class="fas fa-map-marker-alt"></i> Ciudad Universitaria "Guillermo Falconí Espinosa"</span>
                 <div class="socials" style="margin-top: 15px;">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
                     <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
             
@@ -672,13 +759,15 @@
                     <li><a href="#">Planificaciones</a></li>
                     <li><a href="#">Evaluaciones</a></li>
                     <li><a href="#">Plataformas</a></li>
-                    <li><a href="#">Portal UNL</a></li>
+                    <li><a href="https://unl.edu.ec/" target="_blank">Portal UNL</a></li>
+                    <li><a href="https://virtual.unl.edu.ec/" target="_blank">Plataforma Virtual</a></li>
                 </ul>
             </div>
         </div>
         
         <div class="copyright">
             <p>&copy; 2023 Recursos Educativos - Soporte Técnico. Universidad Nacional de Loja - Carrera de Informática Educativa</p>
+            <p style="margin-top: 10px;">"La Universidad Nacional de Loja, comprometida con la excelencia académica"</p>
         </div>
     </footer>
 
@@ -686,14 +775,26 @@
         // Script para resaltar la navegación al hacer scroll
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('nav a');
+            const sections = document.querySelectorAll('section, .container');
             
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    // Remover clase activa de todos los enlaces
-                    navLinks.forEach(l => l.classList.remove('active'));
+            // Resaltar enlace activo al hacer scroll
+            window.addEventListener('scroll', function() {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
                     
-                    // Agregar clase activa al enlace clickeado
-                    this.classList.add('active');
+                    if(pageYOffset >= (sectionTop - 100)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if(link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
                 });
             });
             
@@ -706,6 +807,18 @@
                 
                 card.addEventListener('mouseleave', () => {
                     card.style.transform = 'translateY(0)';
+                });
+            });
+            
+            // Efecto hover en plataformas
+            const platforms = document.querySelectorAll('.platform');
+            platforms.forEach(platform => {
+                platform.addEventListener('mouseenter', () => {
+                    platform.style.transform = 'translateY(-5px)';
+                });
+                
+                platform.addEventListener('mouseleave', () => {
+                    platform.style.transform = 'translateY(0)';
                 });
             });
         });
